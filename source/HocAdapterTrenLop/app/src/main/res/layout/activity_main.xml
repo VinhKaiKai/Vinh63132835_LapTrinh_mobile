@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity" >
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="#ED9696"
+        android:text="Enter your coutry : "
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textSize="25sp"
+        android:textStyle="bold|italic" />
+
+    <AutoCompleteTextView
+        android:id="@+id/autotext"
+        android:hint="Enter country that you want"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:completionThreshold="1" />
+</LinearLayout>
