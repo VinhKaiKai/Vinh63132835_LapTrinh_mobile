@@ -1,7 +1,7 @@
 # Vinh63132835_LapTrinh_mobile
 Trầm Quang Vinh - 63.CNTTCLC1 - 63132835
 
-![Alt text](image-4.png)
+![Alt text](anh/image.png)
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 - (NHỮNG KIẾN THỨC MỚI SẼ UP LÊN ReadMe) 
 - (NHỮNG BÀI TRÊN LỚP HOẶC TƯƠNG TỰ SẼ KHÔNG ĐƯỢC UP LÊN ReadMe)
@@ -14,7 +14,7 @@ Mô tả: xử dụng checkbox, radiobutton, xử lý ràng buộc, dialog để
 
 Chi tiết: Nhập thông tin vào các dữ liệu trong bài và nhấn nút gửi sẽ hiện dialog.
 
-![Alt text](anh/image-1.png) 
+![Alt text](anh/image-1.png)
 
 ![Alt text](anh/image-2.png)
 
@@ -42,7 +42,7 @@ Mô tả: xử lý điểm số hiển thị, điều kiện.
 
 Chi tiết: Nhập thông tin vào các dữ liệu cần ấn nút nó sẽ thể hiện tình trạng sức khỏe.
 
-![Alt text](anh/image-4.png) ![Alt text](anh/image-5.png)
+![Alt text](anh/image-4.png)![Alt text](anh/image-5.png)
 
 LINK: https://github.com/VinhKaiKai/Vinh63132835_LapTrinh_mobile/tree/main/source/IBM
 
@@ -98,7 +98,7 @@ Mô tả: Dùng Tab selector và TabHost
 
 Chi tiết: Nhập data, và bấm vào dấu cộng. nó sẽ lưu vào data của listView và khi ấn vào chuyển tab nó sẽ cập nhật lịch sử phép tính.
 
-![Alt text](image-1.png) ![Alt text](image-2.png)
+![Alt text](anh/image-11.png) ![Alt text](anh/image-12.png)
 
 LINK: https://github.com/VinhKaiKai/Vinh63132835_LapTrinh_mobile/tree/main/source/Tab_Selector
 
@@ -112,7 +112,7 @@ Mô tả: Dùng Intent để làm app nhạc
 
 Chi tiết: Bài hát Tu Tận Hoan sẽ được hát khi ấn vào nút play và chuyển đổi ảnh từ play sang pause. Khi nhấn nút stop sẽ ngưng toàn bài và chuyển nút trên thành play ( về trạng thái đầu ).
 
-![Alt text](image-3.png)
+![Alt text](anh/image-13.png)
 
 LINK: https://github.com/VinhKaiKai/Vinh63132835_LapTrinh_mobile/tree/main/source/NgheNhac
 
