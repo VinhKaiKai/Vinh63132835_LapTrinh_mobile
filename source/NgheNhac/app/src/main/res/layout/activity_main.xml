@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity" >
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#040303"
+        android:text="Tu Tận Hoan(沉光荣）"
+        android:textAlignment="center"
+        android:textColor="#E8E5E5"
+        android:textSize="25sp"
+        android:textStyle="bold|italic" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="306dp"
+        android:background="#474141"
+        app:srcCompat="@drawable/tutanhoan" />
+
+    <ImageButton
+        android:id="@+id/btnplay"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/play" />
+
+    <ImageButton
+        android:id="@+id/btnstop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/pause" />
+
+</LinearLayout>
