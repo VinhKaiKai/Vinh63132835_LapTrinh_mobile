@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Argry_bird</string>
+    <string-array name="list_name">
+        <item>chimdo1</item>
+        <item>chimdo10</item>
+        <item>chimdo11</item>
+        <item>chimdo12</item>
+        <item>chimdo14</item>
+        <item>chimdo16</item>
+        <item>chimdo4</item>
+        <item>chimdo6</item>
+        <item>chimdo5</item>
+        <item>chimdo7</item>
+        <item>chimdo9</item>
+    </string-array>
+</resources>
