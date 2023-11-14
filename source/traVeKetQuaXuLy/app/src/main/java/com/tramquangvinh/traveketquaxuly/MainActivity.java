@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        // Ánh xạ
         edtdl = findViewById(R.id.edtdl);
         edtkq = findViewById(R.id.edtkq);
         btnxl = findViewById(R.id.btnxl);
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         btnxl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // tạo intent từ màn chính qua màng phụ
                 Intent myintent = new Intent(MainActivity.this , ResultActivity.class);
                 int a = Integer.parseInt(edtdl.getText().toString());
                 // Đưa dữ liệu về Intent
@@ -37,12 +39,15 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+
         if(requestCode == 99 && resultCode == 33){
             int kq = data.getIntExtra("kq",0);
+
             edtkq.setText("giá trị gốc là: "+kq);
         }else if(requestCode == 99 && resultCode ==34)
         {
             int kq = data.getIntExtra("kq",0);
+
             edtkq.setText("gía trị bình phương: "+kq);
         }
     }

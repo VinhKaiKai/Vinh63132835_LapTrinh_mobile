@@ -2,6 +2,7 @@ package com.tramquangvinh.appmonan;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -17,9 +18,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //tim listview
+        //tim listview Ánh xạ
         ListView lvDSMonAn = (ListView) findViewById(R.id.lvdsmonan);
-        // chuan bi nguon du lieu
+        // Chuẩn bị nguồn dữ liệu
         ArrayList<MonAn> dsmonan = new ArrayList<>();
         MonAn m1 = new MonAn("Cơm tắm sườn", 25000, "đây là món ăn ngon",R.drawable.monan1);
         MonAn m2 = new MonAn("Sushi", 26000, "đây là món ăn ngon 2",R.drawable.monan2);
@@ -31,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         dsmonan.add(m3);
         dsmonan.add(m4);
         dsmonan.add(m5);
-        //tao adapter
+        //Tạo adapter
         MonAnAdapter adapter = new MonAnAdapter(this,dsmonan);
         lvDSMonAn.setAdapter(adapter);
         // bat xu ly
@@ -41,8 +42,12 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 MonAn monanchon = dsmonan.get(i);
                 Toast.makeText(MainActivity.this, monanchon.getTenMonAn() , Toast.LENGTH_SHORT).show();
+                Intent myintent = new Intent(MainActivity.this , MainActivity2.class);
+                myintent.putExtra("vinh", monanchon.getTenMonAn());
+                startActivity(myintent);
             }
         });
+
 
     }
 }

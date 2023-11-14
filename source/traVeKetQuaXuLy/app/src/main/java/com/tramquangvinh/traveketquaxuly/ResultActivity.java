@@ -16,16 +16,17 @@ public class ResultActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
+        // Ánh xạ
         edtnhan = findViewById(R.id.edtnhan);
         btngoc = findViewById(R.id.btngoc);
         btnbp = findViewById(R.id.btnbp);
         //Nhận INTENT
-        myintent = getIntent();
+        myintent = getIntent(); // hàm nhận nè
         // Lấy dữ liệu khỏi Intent
         int a = myintent.getIntExtra("soa", 0); // so 0 là khi lấy số a ko thành công nó sẽ biến số đó thành số 0
         // Hiển thị nó lên trên khung
         edtnhan.setText(""+a);
-        // sự kiện click gốc
+        // sự kiện click các nút + 10 và mũ lên
         btngoc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

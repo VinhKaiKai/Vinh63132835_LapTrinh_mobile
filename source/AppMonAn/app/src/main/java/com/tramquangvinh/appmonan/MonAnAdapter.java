@@ -23,6 +23,7 @@ public class MonAnAdapter extends BaseAdapter {
         this.layoutInflater1 = LayoutInflater.from(_context1);
     }
 
+
     @Override
     public int getCount() {
         return dsMonAn.size();
@@ -45,11 +46,12 @@ public class MonAnAdapter extends BaseAdapter {
         // kiemtra
         if(viewhienhanh == null)
         {
+            // Lấy layout mẫu
             viewhienhanh = layoutInflater1.inflate(R.layout.item_monan,null);
         }
-        // lay du lieu
+        // Lấy dữ liệu
         MonAn monanhientai = dsMonAn.get(i);
-        // gan len cac dieu khien
+        // Gán lên các điều khiển
         TextView txt_tenmon = (TextView) viewhienhanh.findViewById(R.id.txt_tenmonan); //
         TextView txt_dongia = (TextView) viewhienhanh.findViewById(R.id.txt_dongia);//
         TextView txt_mota = (TextView) viewhienhanh.findViewById(R.id.txt_mota);//

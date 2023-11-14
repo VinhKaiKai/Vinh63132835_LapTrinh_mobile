@@ -23,7 +23,9 @@ public class MainActivity extends AppCompatActivity {
         // Anh xa
         txt_select = findViewById(R.id.txt_select);
         lv1 = findViewById(R.id.lv1);
-        myadapter = new ArrayAdapter<>(MainActivity.this, android.R.layout.simple_list_item_1,myphone);
+
+        //set up adapter
+        myadapter = new ArrayAdapter<>(MainActivity.this,     android.R.layout.simple_list_item_1,   myphone);
         lv1.setAdapter(myadapter);
         // Bắt sự kiện click vào Item ss
         lv1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
