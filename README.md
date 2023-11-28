@@ -123,3 +123,10 @@ Mô tả: dùng SharedPreferences để làm app
 Chi tiết:Tính toán phép cộng, và lưu lại các lịch sử tính toán, nếu thoát ứng dụng khi vào lại nó sẽ không mất dữ liệu lịch sữ và ấn clear nó sẽ xóa hết các lịch sử.
 ![Alt text](image-14.png)
 LINK: https://github.com/VinhKaiKai/Vinh63132835_LapTrinh_mobile/tree/main/source/SharedPreferences
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Bài 11: SQLITE (Trung Bình)
+Mức độ: Trung Bình
+Mô tả: dùng SQLite để làm app
+Chi Tiết: ứng dụng được thực hiện nhập các trường dữ liệu mã tên và sỉ số và các chức năng thêm sửa xóa và cập nhật dữ liệu theo trường mã, bước tiến cấp của bài tập này là làm thêm ấn vào listview để tự chọn ko thể điền mã để chọn mục tiêu thực hiện nữa.
+![Alt text](image-15.png)
+LINK: https://github.com/VinhKaiKai/Vinh63132835_LapTrinh_mobile/tree/main/source/Hocsqlite_1
