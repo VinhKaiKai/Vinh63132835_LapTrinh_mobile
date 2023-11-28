@@ -117,3 +117,9 @@ Chi tiết: Bài hát Tu Tận Hoan sẽ được hát khi ấn vào nút play v
 LINK: https://github.com/VinhKaiKai/Vinh63132835_LapTrinh_mobile/tree/main/source/NgheNhac
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Bài 10: cơ sở dữ liệu (cơ bản)
+Mức độ: cơ bản
+Mô tả: dùng SharedPreferences để làm app
+Chi tiết:Tính toán phép cộng, và lưu lại các lịch sử tính toán, nếu thoát ứng dụng khi vào lại nó sẽ không mất dữ liệu lịch sữ và ấn clear nó sẽ xóa hết các lịch sử.
+![Alt text](image-14.png)
+LINK: https://github.com/VinhKaiKai/Vinh63132835_LapTrinh_mobile/tree/main/source/SharedPreferences
