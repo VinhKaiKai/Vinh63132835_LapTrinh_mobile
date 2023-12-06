@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <resources>
+    <color name="black7">#8F89B7</color>
+    <color name="black">#FF000000</color>
+    <color name="black1">#0B1F3A</color>
+    <color name="black2">#17103A</color>
+    <color name="black3">#0C2333</color>
+    <color name="black4">#3C284B</color>
+    <color name="black5">#59546C</color>
+    <color name="black6">#143A51</color>
+    <color name="blue">#3A0CA3</color>
+    <color name="blue1">#91BBE5</color>
+    <color name="blue2">#84E6F8</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="white1">#EBDFEB</color>
+    <color name="white2">#FAE0C7</color>
+    <color name="white3">#A0C9C3</color>
+    <color name="green">#4EB09B</color>
+    <color name="green1">#70C2B4</color>
+    <color name="organe">#E97254</color>
+    <color name="organe1">#F20231</color>
+    <color name="organe2">#FF4000</color>
+    <color name="pink">#F28076</color>
+    <color name="pink1">#F1B0DA</color>
+    <color name="pink2">#FFB6AF</color>
+    <color name="pink3">#EF5C76</color>
+    <color name="pink4">#F17B77</color>
+    <color name="pink5">#F0A7A0</color>
+    <color name="pink6">#64113F</color>
+    <color name="yellow">#FBC193</color>
+    <color name="yellow1">#FFD66D</color>
+    <color name="yellow2">#FFB758</color>
+</resources>

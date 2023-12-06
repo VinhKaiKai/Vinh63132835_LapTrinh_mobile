@@ -1,6 +1,5 @@
-package com.tramquangvinh.hocintent;
+package com.tramquangvinh.duancuoikhoa_63132835;
 
-import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -9,22 +8,21 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-    Button btnopen;
 
-
+    Button btnenter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        btnopen = findViewById(R.id.btnopen);
-        btnopen.setOnClickListener(new View.OnClickListener() {
+        btnenter = findViewById(R.id.btnenter);
+        btnenter.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                // khai bao Intent
-                Intent myintent = new Intent(MainActivity.this, ChildActivity.class);
+            public void onClick(View v) {
+                Intent myintent = new Intent(MainActivity.this, Activity_login.class);
                 // khởi động
                 startActivity(myintent);
             }
         });
+
     }
 }
