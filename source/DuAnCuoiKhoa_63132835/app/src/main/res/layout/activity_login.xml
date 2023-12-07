@@ -8,7 +8,7 @@
     tools:context=".Activity_login">
 
     <EditText
-        android:id="@+id/editTextText2"
+        android:id="@+id/edtPassWord"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="30dp"
@@ -26,7 +26,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText" />
+        app:layout_constraintTop_toBottomOf="@+id/edtUserName" />
 
     <ImageView
         android:id="@+id/imageView3"
@@ -62,7 +62,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
     <EditText
-        android:id="@+id/editTextText"
+        android:id="@+id/edtUserName"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:ems="10"
@@ -89,10 +89,10 @@
         android:text="Forget your Password?"
         android:textColor="#ffffff"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/editTextText2"
+        app:layout_constraintEnd_toEndOf="@+id/edtPassWord"
         app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="@+id/editTextText2"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText2" />
+        app:layout_constraintStart_toStartOf="@+id/edtPassWord"
+        app:layout_constraintTop_toBottomOf="@+id/edtPassWord" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnlogin"
@@ -107,8 +107,8 @@
         android:textSize="20sp"
         android:textStyle="bold"
 
-        app:layout_constraintEnd_toEndOf="@+id/editTextText2"
-        app:layout_constraintStart_toStartOf="@+id/editTextText2"
+        app:layout_constraintEnd_toEndOf="@+id/edtPassWord"
+        app:layout_constraintStart_toStartOf="@+id/edtPassWord"
         app:layout_constraintTop_toBottomOf="@+id/txtforgotpassword" />
 
     <TextView
