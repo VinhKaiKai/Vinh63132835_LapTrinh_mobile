@@ -60,7 +60,7 @@
          />
 
     <EditText
-        android:id="@+id/editTextText3"
+        android:id="@+id/edtAccount"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="33dp"
@@ -111,13 +111,13 @@
         android:textStyle="bold"
         android:typeface="serif"
 
-        app:layout_constraintEnd_toEndOf="@+id/editTextText3"
+        app:layout_constraintEnd_toEndOf="@+id/edtAccount"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editTextText3"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText3" />
+        app:layout_constraintStart_toStartOf="@+id/edtAccount"
+        app:layout_constraintTop_toBottomOf="@+id/edtAccount" />
 
     <EditText
-        android:id="@+id/editTextText4"
+        android:id="@+id/edtPassword"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:background="@drawable/edittext_background"
@@ -149,13 +149,13 @@
         android:textSize="20sp"
         android:textStyle="bold"
         android:typeface="serif"
-        app:layout_constraintEnd_toEndOf="@+id/editTextText4"
+        app:layout_constraintEnd_toEndOf="@+id/edtPassword"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editTextText4"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText4" />
+        app:layout_constraintStart_toStartOf="@+id/edtPassword"
+        app:layout_constraintTop_toBottomOf="@+id/edtPassword" />
 
     <EditText
-        android:id="@+id/editTextText5"
+        android:id="@+id/edtEmail"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:background="@drawable/edittext_background"
@@ -192,7 +192,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.153"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText5">
+        app:layout_constraintTop_toBottomOf="@+id/edtEmail">
 
     </androidx.appcompat.widget.AppCompatButton>
 
@@ -212,7 +212,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.473"
         app:layout_constraintStart_toEndOf="@+id/btnsignup"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText5"
+        app:layout_constraintTop_toBottomOf="@+id/edtEmail"
         tools:visibility="visible"></androidx.appcompat.widget.AppCompatButton>
 
     <TextView
@@ -223,9 +223,9 @@
         android:text="꧁༺༒༻꧂"
         android:textColor="@color/black4"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/editTextText5"
+        app:layout_constraintEnd_toEndOf="@+id/edtEmail"
         app:layout_constraintHorizontal_bias="0.518"
-        app:layout_constraintStart_toStartOf="@+id/editTextText5"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText5" />
+        app:layout_constraintStart_toStartOf="@+id/edtEmail"
+        app:layout_constraintTop_toBottomOf="@+id/edtEmail" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

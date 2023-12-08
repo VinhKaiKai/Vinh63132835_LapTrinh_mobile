@@ -1,11 +1,15 @@
 package com.tramquangvinh.duancuoikhoa_63132835.database;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import androidx.annotation.Nullable;
+
+import com.tramquangvinh.duancuoikhoa_63132835.model.TaiKhoan;
 
 public class databasedoctruyen extends SQLiteOpenHelper {
     // cơ sở dữ liệu
@@ -239,5 +243,22 @@ public class databasedoctruyen extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor res = db.rawQuery("SELECT * FROM "+TABLE_TAIKHOAN,null);
         return res;
+    }
+
+    // Phương thức thêm tài khoản vào Database
+    public  void AddTaiKhoan(TaiKhoan taiKhoan)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        // thêm dữ liệu vào biến value và thêm vô bảng tài
+        ContentValues values = new ContentValues();
+        values.put(TEN_TAI_KHOAN,taiKhoan.getTenTaiKhoan());
+        values.put(MAT_KHAU,taiKhoan.getMatKhau());
+        values.put(EMAIL,taiKhoan.getEmail());
+        values.put(PHAN_QUYEN,taiKhoan.getPhanQuyen());
+        db.insert(TABLE_TAIKHOAN, null, values);
+
+        //
+        db.close();
+        Log.e("ADD TK", "TC");
     }
 }
