@@ -58,18 +58,20 @@ public class Activity_login extends AppCompatActivity {
                    {
                        //Lấy dữ liệu phân quyền và id
                        int phanquyen = cursor.getInt(4);
-                       int id= cursor.getInt(0);
+                       int idd= cursor.getInt(0);
                        String email = cursor.getString(3);
                        String tentk = cursor.getString(1);
 
-                       Intent myintern1 = new Intent(Activity_login.this, activity_vip.class);
 
-                       myintern1.putExtra("phanquyen", phanquyen);
-                       myintern1.putExtra("id", id);
+                       Intent myintern1 = new Intent(Activity_login.this, activity_vip.class);
+                       myintern1.putExtra("phanq", phanquyen);
+                       myintern1.putExtra("idd", idd);
                        myintern1.putExtra("email", email);
                        myintern1.putExtra("tentaikhoan", tentk);
 
                        startActivity(myintern1);
+
+
                    }
                    else if(edtusername.getText().toString().equals("") && edtpassword.getText().toString().equals(""))
                    {
