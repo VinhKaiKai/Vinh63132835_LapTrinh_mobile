@@ -6,6 +6,16 @@ Trầm Quang Vinh - 63.CNTTCLC1 - 63132835
 - (NHỮNG KIẾN THỨC MỚI SẼ UP LÊN ReadMe) 
 - (NHỮNG BÀI TRÊN LỚP HOẶC TƯƠNG TỰ SẼ KHÔNG ĐƯỢC UP LÊN ReadMe)
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Dự án môn học: Quản lý đọc truyện
+
+Mức độ: siêu khó
+
+Mô tả: dùng toàn bộ kiến thức đã học trên lớp và internet để làm dự án hoàn thành
+
+Chi tiết: Làm 1 sản phẩm quản lý đọc sách cho 2 đối tượng người dùng là admin và người dùng. mọi chi tiết xin hãy xem qua đường link của dự án lớn này.
+
+LINK: https://github.com/VinhKaiKai/Vinh63132835_LapTrinh_mobile/tree/main/source/ungdungdoctruyen
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Bài 1: THÔNG TIN NGƯỜI DÙNG
 
 Mức độ: trung bình
