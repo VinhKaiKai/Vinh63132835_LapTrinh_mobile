@@ -1,5 +1,8 @@
 package com.tramquangvinh.ungdungdoctruyen;
 
+import com.tramquangvinh.ungdungdoctruyen.adapter.adapterchuyenmuc;
+import com.tramquangvinh.ungdungdoctruyen.adapter.adapterthongtin;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -9,6 +12,7 @@ import androidx.viewpager2.widget.ViewPager2;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,8 +23,10 @@ import com.bdtopcoder.smart_slider.SliderAdapter;
 import com.bdtopcoder.smart_slider.SliderItem;
 import com.google.android.material.navigation.NavigationView;
 import com.tramquangvinh.ungdungdoctruyen.adapter.adapterTruyen;
+import com.tramquangvinh.ungdungdoctruyen.model.TaiKhoan;
 import com.tramquangvinh.ungdungdoctruyen.model.Truyen;
 import com.tramquangvinh.ungdungdoctruyen.database.Databasedoctruyen;
+import com.tramquangvinh.ungdungdoctruyen.model.chuyenmuc;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,18 +41,22 @@ public class ManChinh extends AppCompatActivity {
     DrawerLayout drawerLayout;
     String email;
     String tentaikhoan;
+    ArrayList<chuyenmuc> chuyenmucArrayList;
+    ArrayList<TaiKhoan> taiKhoanArrayList;
     ArrayList<Truyen> TruyenArraylist;
     adapterTruyen adapterTruyen;
+    adapterthongtin adapterthongtin;
+    adapterchuyenmuc adapterchuyenmuc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_man_chinh);
         databasedoctruyen = new Databasedoctruyen(this);
-        // nhan data tu dang nhap
 
+        // nhan data tu dang nhap
         Intent intentpq = getIntent();
-        int i = intentpq.getIntExtra("phanpq",0);
+        int phanquyen = intentpq.getIntExtra("phanq",0);
         int idd = intentpq.getIntExtra("idd",0);
         email = intentpq.getStringExtra("email");
         tentaikhoan = intentpq.getStringExtra("tentaikhoan");
@@ -65,7 +75,34 @@ public class ManChinh extends AppCompatActivity {
                 startActivity(myintent);
             }
         });
+        // bắt sự kiện listview
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if(position == 0)
+                {
+                    Log.e("Đăng bài:", "Bạn không có quyền");
+                    if(phanquyen == 2)
+                    {
+                        Intent intent = new Intent(ManChinh.this, ManAdmin.class);
+                        //gui id tai khoan qua man admin
+                        intent.putExtra("Id",idd);
+                        startActivity(intent);
+                    }else {
+                        Toast.makeText(ManChinh.this, "Bạn không có quyền Đăng bài!", Toast.LENGTH_SHORT).show();
+                        Log.e("Đăng bài:", "Bạn không có quyền");
+                    }
+                }
+                else if (position ==1)
+                {
+                    Intent intent = new Intent(ManChinh.this, ManThongTin.class);
+                    startActivity(intent);
 
+                } else if (position ==2) {
+                    finish();
+                }
+            }
+        });
 
 
 
@@ -79,9 +116,11 @@ public class ManChinh extends AppCompatActivity {
         ViewPager2 viewPager2 = findViewById(R.id.smartSlider);
         // làm chuyển ảnh tự động
         List<SliderItem> sliderItems = new ArrayList<>();
-        sliderItems.add(new SliderItem(R.drawable.img1,"image 1"));
-        sliderItems.add(new SliderItem(R.drawable.pmg2,"Image 2"));
-        sliderItems.add(new SliderItem(R.drawable.img3,"Image 3"));
+        sliderItems.add(new SliderItem(R.drawable.truyen1,"image 1"));
+        sliderItems.add(new SliderItem(R.drawable.truyen2,"Image 2"));
+        sliderItems.add(new SliderItem(R.drawable.truyen3,"Image 3"));
+        sliderItems.add(new SliderItem(R.drawable.truyen4,"Image 3"));
+        sliderItems.add(new SliderItem(R.drawable.truyen5,"Image 3"));
         viewPager2.setAdapter(new SliderAdapter(sliderItems,viewPager2,3000));
         new SliderAdapter((position, title, view) -> {
             Toast.makeText(this, "Position: "+position+" Title: "+title, Toast.LENGTH_SHORT).show();
@@ -126,6 +165,21 @@ public class ManChinh extends AppCompatActivity {
         }
         cursor1.moveToFirst();
         cursor1.close();
+        //Thông tin
+         taiKhoanArrayList = new ArrayList<>();
+         taiKhoanArrayList.add(new TaiKhoan(tentaikhoan,email));
+
+        adapterthongtin = new adapterthongtin(this,R.layout.navigation_thongtin,taiKhoanArrayList);
+        listViewThongTin.setAdapter(adapterthongtin);
+
+        // chuyen muc
+        chuyenmucArrayList = new ArrayList<>();
+        chuyenmucArrayList.add(new chuyenmuc("Đăng bài", R.drawable.ic_post));
+        chuyenmucArrayList.add(new chuyenmuc("Thông tin",R.drawable.face));
+        chuyenmucArrayList.add(new chuyenmuc("Đăng xuất", R.drawable.logout));
+        adapterchuyenmuc = new adapterchuyenmuc(this, R.layout.chuyenmuc,chuyenmucArrayList);
+        listView.setAdapter(adapterchuyenmuc);
+
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

@@ -7,9 +7,11 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.tramquangvinh.ungdungdoctruyen.model.TaiKhoan;
+import com.tramquangvinh.ungdungdoctruyen.model.Truyen;
 
 public class Databasedoctruyen extends SQLiteOpenHelper {
     // cơ sở dữ liệu
@@ -252,8 +254,37 @@ public class Databasedoctruyen extends SQLiteOpenHelper {
     // lay thong tin 3 truyen moi
     public Cursor getData1() {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor res = db.rawQuery("SELECT * FROM " + TABLE_TRUYEN + " ORDER BY " + ID_TRUYEN + " DESC LIMIT 3", null);
+        Cursor res = db.rawQuery("SELECT * FROM " + TABLE_TRUYEN + " ORDER BY " + ID_TRUYEN + " DESC LIMIT 5", null);
+        return res;
+    }
+    public Cursor getData2()
+    {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor res = db.rawQuery("SELECT * FROM "+TABLE_TRUYEN,null);
         return res;
     }
 
+    //Làm chức năng xóa admin
+    // add truyeen
+    public void AddTruyen(Truyen truyen)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(TEN_TRUYEN,truyen.getTenTruyen());
+        values.put(NOI_DUNG,truyen.getNoiDung());
+        values.put(IMAGE,truyen.getAnh());
+        values.put(ID_TAI_KHOAN,truyen.getID_TK());
+        db.insert(TABLE_TRUYEN,null,values);
+        db.close();
+    }
+    // delete
+    public int Delete(int i)
+    {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        int res = db.delete(TABLE_TRUYEN,ID_TRUYEN+" = "+i,null);
+        return res;
+    }
 }

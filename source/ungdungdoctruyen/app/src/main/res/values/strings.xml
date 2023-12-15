@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">ungdungdoctruyen</string>
+    <string name="app_name">Truyện Hay</string>
+    <string name="link1">
+        <![CDATA[Tại đây!]]>
+    </string>
+    <string name="link2">
+        <![CDATA[Tại đây!]]>
+    </string>
 </resources>

@@ -35,11 +35,19 @@ public class adapterTruyen extends BaseAdapter {
     public long getItemId(int position) {
         return position;
     }
+
+// filter
+    public void filterList(ArrayList<Truyen> filteredList) {
+        listTruyen = filteredList;
+        notifyDataSetChanged();
+    }
+
     public class  ViewHolder{
         TextView txtTenTruyen;
         ImageView imgTruyen;
 
     }
+
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder viewHolder = null;
@@ -49,10 +57,8 @@ public class adapterTruyen extends BaseAdapter {
         viewHolder.txtTenTruyen = convertView.findViewById(R.id.textviewTenTruyenNew);
         viewHolder.imgTruyen = convertView.findViewById(R.id.imgNewTruyen);
         convertView.setTag(viewHolder);
-
         Truyen truyen = (Truyen) getItem(position);
         viewHolder.txtTenTruyen.setText(truyen.getTenTruyen());
-
         Picasso.get().load(truyen.getAnh()).placeholder(R.drawable.ic_load).error(R.drawable.ic_image).into(viewHolder.imgTruyen);
         return convertView;
     }

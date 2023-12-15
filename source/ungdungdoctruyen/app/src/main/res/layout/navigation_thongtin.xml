@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="@drawable/nen"
+        android:layout_width="match_parent"
+        android:layout_height="190dp">
+        <ImageView
+            android:layout_width="100dp"
+            android:id="@+id/imageview"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_height="100dp"
+            android:src="@drawable/anhdaidien">
+        </ImageView>
+
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="Xin chào tài khoản :"
+                android:textColor="@color/black2"
+                android:textSize="20sp"
+                android:textStyle="bold">
+
+            </TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/TEXT_NAME"
+                android:layout_marginLeft="10dp"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/black6"
+                android:text="Vinh 帅哥">
+
+            </TextView>
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/TEXT_Email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:lineSpacingExtra="14sp"
+            android:text="Vinh@gmail.com"
+            android:textColor="@color/black2"
+            android:textStyle="bold|italic"
+            android:typeface="normal">
+
+        </TextView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/organe"
+
+            android:id="@+id/TEXTTrangThai"
+            android:textSize="17dp"
+            android:text="Online"
+            android:textStyle="bold">
+
+        </TextView>
+    </LinearLayout>
+
+</LinearLayout>
