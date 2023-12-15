@@ -100,6 +100,10 @@ public class ManChinh extends AppCompatActivity {
 
                 } else if (position ==2) {
                     finish();
+                } else if (position ==3)
+                {
+                    Intent intent = new Intent(ManChinh.this, ManNhacNen.class);
+                    startActivity(intent);
                 }
             }
         });
@@ -177,6 +181,7 @@ public class ManChinh extends AppCompatActivity {
         chuyenmucArrayList.add(new chuyenmuc("Đăng bài", R.drawable.ic_post));
         chuyenmucArrayList.add(new chuyenmuc("Thông tin",R.drawable.face));
         chuyenmucArrayList.add(new chuyenmuc("Đăng xuất", R.drawable.logout));
+        chuyenmucArrayList.add(new chuyenmuc("Nhạc nền", R.drawable.logout));
         adapterchuyenmuc = new adapterchuyenmuc(this, R.layout.chuyenmuc,chuyenmucArrayList);
         listView.setAdapter(adapterchuyenmuc);
 

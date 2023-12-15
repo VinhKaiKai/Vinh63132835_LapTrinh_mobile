@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <color name="nenc2">#F2F2F2</color>
+    <color name="chuc2">#1E4E78</color>
+    <color name="nenc3">#A6A6A6</color>
+    <color name="chuc3">#43546C</color>
     <color name="black7">#8F89B7</color>
     <color name="black">#FF000000</color>
     <color name="black1">#0B1F3A</color>
     <color name="black2">#17103A</color>
+    <color name="xam5">#2B3131</color>
+    <color name="nau">#876D52</color>
     <color name="black3">#0C2333</color>
     <color name="black4">#3C284B</color>
     <color name="black5">#59546C</color>
@@ -15,7 +22,7 @@
     <color name="white1">#EBDFEB</color>
     <color name="xam">#EEEEEE</color>
     <color name="xam2">#242329</color>
-    <color name="xam1">#DDDDDD</color>
+    <color name="xam1">#B6B0B0</color>
     <color name="white2">#FAE0C7</color>
     <color name="white3">#A0C9C3</color>
     <color name="green">#4EB09B</color>
@@ -30,9 +37,14 @@
     <color name="pink2">#FFB6AF</color>
     <color name="pink3">#EF5C76</color>
     <color name="pink4">#F17B77</color>
+    <color name="red">#FF0000</color>
+    <color name="lightRed">#FF9999</color>
     <color name="pink5">#F0A7A0</color>
     <color name="pink6">#64113F</color>
     <color name="yellow">#FBC193</color>
     <color name="yellow1">#FFD66D</color>
-    <color name="yellow2">#FFB758</color>
+    <color name="yellow2">#F8A940</color>
+    <color name="xam10">#F0F0F0</color>
+    <color name="xam11">#808080</color>
+    <color name="xam12">#404040</color>
 </resources>

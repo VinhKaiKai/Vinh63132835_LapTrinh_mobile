@@ -4,13 +4,16 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
+    android:background="@color/green1"
     android:layout_height="match_parent">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Bạn có đồng ý xóa truyện này không?"
-        android:textStyle="bold"
+        android:textStyle="italic"
         android:textSize="20sp"
+        android:textColor="@color/red"
+        android:padding="10dp"
         android:gravity="center"
         >
 
@@ -20,23 +23,28 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center"
+        android:paddingBottom="10dp"
         android:layout_marginTop="20dp">
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:text="Yes"
             android:id="@+id/buttonYes"
+            android:textColor="@color/red"
             android:layout_marginRight="10dp"
-            android:layout_width="wrap_content"
+            android:background="@drawable/button_2"
+            android:layout_width="120dp"
             android:layout_height="wrap_content">
 
-        </Button>
-        <Button
+        </androidx.appcompat.widget.AppCompatButton>
+        <androidx.appcompat.widget.AppCompatButton
             android:text="No"
             android:id="@+id/buttonNo"
             android:layout_marginLeft="10dp"
-            android:layout_width="wrap_content"
+            android:textColor="@color/blue"
+            android:background="@drawable/button_2"
+            android:layout_width="120dp"
             android:layout_height="wrap_content">
 
-        </Button>
+        </androidx.appcompat.widget.AppCompatButton>
 
     </LinearLayout>
 

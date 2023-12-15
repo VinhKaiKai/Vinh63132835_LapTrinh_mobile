@@ -20,7 +20,6 @@ public class MyService extends Service {
     }
 
     // ham oncreate  khoi tao doi tuong ma service quan ly
-
     @Override
     public void onCreate() {
         super.onCreate();
@@ -31,13 +30,13 @@ public class MyService extends Service {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
 
-        if(mymusic.isPlaying())
+        if(mymusic.isPlaying()) // đang phát thì tạm ngừng
         {
-            mymusic.pause();
+            mymusic.pause(); // Tạm ngừng
         }
         else
         {
-            mymusic.start();
+            mymusic.start(); // còn nếu không đang phát thì dừng lại
         }
         return super.onStartCommand(intent, flags, startId);
     }
@@ -46,6 +45,6 @@ public class MyService extends Service {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        mymusic.stop();
+        mymusic.stop(); // dừng nhạc luôn
     }
 }
