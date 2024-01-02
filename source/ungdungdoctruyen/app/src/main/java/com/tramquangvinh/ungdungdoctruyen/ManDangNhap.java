@@ -25,6 +25,7 @@ public class ManDangNhap extends AppCompatActivity {
         btnDangKy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Intent intent = new Intent(ManDangNhap.this, ManDangKy.class);
                 startActivity(intent);
             }
@@ -39,7 +40,7 @@ public class ManDangNhap extends AppCompatActivity {
 
                 while (cursor.moveToNext())
                 {
-                    String datatentaikhoan = cursor.getString(1);
+                    String datatentaikhoan = cursor.getString(3);
                     String datamatkhau = cursor.getString(2);
 
                     if(datatentaikhoan.equals(tentaikhoan) && datamatkhau.equals(matkhau))
