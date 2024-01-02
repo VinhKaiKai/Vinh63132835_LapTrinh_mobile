@@ -32,8 +32,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ManChinh extends AppCompatActivity {
-
-
     Toolbar toolbar;
     Databasedoctruyen databasedoctruyen;
     NavigationView navigationView;
@@ -52,21 +50,22 @@ public class ManChinh extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_man_chinh);
-        databasedoctruyen = new Databasedoctruyen(this);
 
-        // nhan data tu dang nhap
+        databasedoctruyen = new Databasedoctruyen(this);
+        // Nhận data từ đăng nhập
         Intent intentpq = getIntent();
         int phanquyen = intentpq.getIntExtra("phanq",0);
         int idd = intentpq.getIntExtra("idd",0);
         email = intentpq.getStringExtra("email");
         tentaikhoan = intentpq.getStringExtra("tentaikhoan");
-
-
         Anhxa();
         ActionBar();
+
+        // sử lý khi người dùng chọn vào danh sách truyện
         listViewNew.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                // đẩy cái tên với cái nội dung qua màn nội dung để hiển thị
                 Intent myintent = new Intent(ManChinh.this,ManNoiDung.class);
                 String tent = TruyenArraylist.get(position).getTenTruyen();
                 String noidungt = TruyenArraylist.get(position).getNoiDung();
@@ -75,7 +74,8 @@ public class ManChinh extends AppCompatActivity {
                 startActivity(myintent);
             }
         });
-        // bắt sự kiện listview
+
+        // bắt sự kiện listview chức năng trên menu
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -85,10 +85,12 @@ public class ManChinh extends AppCompatActivity {
                     if(phanquyen == 2)
                     {
                         Intent intent = new Intent(ManChinh.this, ManAdmin.class);
-                        //gui id tai khoan qua man admin
+                        //gửi id tài khoản qua màn admin
                         intent.putExtra("Id",idd);
                         startActivity(intent);
-                    }else {
+                    }
+                    else
+                    {
                         Toast.makeText(ManChinh.this, "Bạn không có quyền Đăng bài!", Toast.LENGTH_SHORT).show();
                         Log.e("Đăng bài:", "Bạn không có quyền");
                     }
@@ -97,7 +99,6 @@ public class ManChinh extends AppCompatActivity {
                 {
                     Intent intent = new Intent(ManChinh.this, ManThongTin.class);
                     startActivity(intent);
-
                 } else if (position ==2) {
                     finish();
                 } else if (position ==3)
@@ -110,37 +111,32 @@ public class ManChinh extends AppCompatActivity {
 
 
 
-
-
-
-
-
-
-
         ViewPager2 viewPager2 = findViewById(R.id.smartSlider);
         // làm chuyển ảnh tự động
         List<SliderItem> sliderItems = new ArrayList<>();
         sliderItems.add(new SliderItem(R.drawable.truyen1,"image 1"));
         sliderItems.add(new SliderItem(R.drawable.truyen2,"Image 2"));
         sliderItems.add(new SliderItem(R.drawable.truyen3,"Image 3"));
-        sliderItems.add(new SliderItem(R.drawable.truyen4,"Image 3"));
-        sliderItems.add(new SliderItem(R.drawable.truyen5,"Image 3"));
+        sliderItems.add(new SliderItem(R.drawable.truyen4,"Image 4"));
+        sliderItems.add(new SliderItem(R.drawable.truyen5,"Image 5"));
         viewPager2.setAdapter(new SliderAdapter(sliderItems,viewPager2,3000));
         new SliderAdapter((position, title, view) -> {
             Toast.makeText(this, "Position: "+position+" Title: "+title, Toast.LENGTH_SHORT).show();
         });
     }
 
-    private void ActionBar() {
+    private void ActionBar()
+    {
         setSupportActionBar(toolbar);
         // Set nút cho actionbar
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         // tạo icon cho toolbar
         toolbar.setNavigationIcon(android.R.drawable.ic_menu_sort_by_size);
-
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
+                // Khi nút back trên action bar được nhấn, mở drawer layout từ bên trái (GravityCompat.START).
                 drawerLayout.openDrawer(GravityCompat.START);
             }
         });
@@ -155,7 +151,9 @@ public class ManChinh extends AppCompatActivity {
         navigationView = findViewById(R.id.navigationView);
         drawerLayout = findViewById(R.id.drawerlayout);
         TruyenArraylist = new ArrayList<>();
+        // Tạo 1 con trỏ
         Cursor cursor1 = databasedoctruyen.getData1();
+        // để lấy 5 quyển truyện mới nhất từ data ra màn hình hiển thị
         while (cursor1.moveToNext())
         {
             int id = cursor1.getInt(0);
@@ -163,16 +161,22 @@ public class ManChinh extends AppCompatActivity {
             String noidung = cursor1.getString(2);
             String anh = cursor1.getString(3);
             int id_tk = cursor1.getInt(4);
+            // lấy rồi thêm vô cái list
             TruyenArraylist.add(new Truyen(id,tentruyen,noidung,anh,id_tk));
+            // nhét vô cái adapter
             adapterTruyen = new adapterTruyen(getApplicationContext(),TruyenArraylist);
+            // hiển thị truyện lên listview
             listViewNew.setAdapter(adapterTruyen);
         }
+        // chạy xong cho nó lên dòng đầu (con trỏ)
         cursor1.moveToFirst();
+        // đóng con trỏ
         cursor1.close();
-        //Thông tin
+
+        //thông tin khi nhấn vào cái menu khi nhận dữ liệu từ màn đăng nhập qua thì lấy nó bỏ vô list tài khoản
          taiKhoanArrayList = new ArrayList<>();
          taiKhoanArrayList.add(new TaiKhoan(tentaikhoan,email));
-
+        // nhét vô layout navigation_thongtin
         adapterthongtin = new adapterthongtin(this,R.layout.navigation_thongtin,taiKhoanArrayList);
         listViewThongTin.setAdapter(adapterthongtin);
 

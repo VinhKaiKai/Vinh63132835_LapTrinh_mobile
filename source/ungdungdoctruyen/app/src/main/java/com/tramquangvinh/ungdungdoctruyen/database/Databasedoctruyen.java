@@ -251,7 +251,7 @@ public class Databasedoctruyen extends SQLiteOpenHelper {
         db.close();
         Log.e("ADD TK", "TC");
     }
-    // lay thong tin 3 truyen moi
+    // Lấy thông tin 5 quyển truyện mới nhất từ dữ liệu ra
     public Cursor getData1() {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor res = db.rawQuery("SELECT * FROM " + TABLE_TRUYEN + " ORDER BY " + ID_TRUYEN + " DESC LIMIT 5", null);
