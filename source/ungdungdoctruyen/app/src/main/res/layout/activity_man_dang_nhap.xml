@@ -8,6 +8,8 @@
     android:background="@color/white3"
     tools:context=".ManDangNhap">
 
+
+    <!-- Đây là một comment cho dòng này
     <EditText
         android:id="@+id/matkhau"
         android:layout_width="0dp"
@@ -28,7 +30,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/taikhoan" />
-
+   -->
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="159dp"
@@ -56,16 +58,42 @@
         android:layout_marginStart="35dp"
         android:text="Log In"
         android:textColor="#ffffff"
-        android:textSize="45dp"
+        android:fontFamily="cursive"
+        android:textSize="60dp"
         android:textStyle="bold"
         android:typeface="serif"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ketnoitaikhoan"
+        app:boxBackgroundColor="#2A926F"
+        android:paddingLeft="29dp"
+        android:paddingRight="29dp"
+        android:layout_marginTop="15dp"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/taikhoan"
+            android:layout_width="match_parent"
+            android:textStyle="bold"
+            android:paddingTop="10dp"
+            android:textSize="20sp"
+            android:layout_height="wrap_content"
+            android:hint="Enter Account" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <!--
     <EditText
         android:id="@+id/taikhoan"
         android:layout_width="0dp"
-        android:layout_height="50dp"
+        android:layout_height="55dp"
         android:ems="10"
         android:layout_marginTop="16dp"
         android:layout_marginStart="30dp"
@@ -81,7 +109,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
-
+-->>
     <TextView
         android:id="@+id/txtforgotpassword"
         android:layout_width="wrap_content"
@@ -90,10 +118,10 @@
         android:text="Forget your Password?"
         android:textColor="#ffffff"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/matkhau"
+        app:layout_constraintEnd_toEndOf="@+id/ketnoi"
         app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="@+id/matkhau"
-        app:layout_constraintTop_toBottomOf="@+id/matkhau" />
+        app:layout_constraintStart_toStartOf="@+id/ketnoi"
+        app:layout_constraintTop_toBottomOf="@+id/ketnoi" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/dangnhap"
@@ -108,8 +136,8 @@
         android:textSize="20sp"
         android:textStyle="bold"
 
-        app:layout_constraintEnd_toEndOf="@+id/matkhau"
-        app:layout_constraintStart_toStartOf="@+id/matkhau"
+        app:layout_constraintEnd_toEndOf="@+id/ketnoi"
+        app:layout_constraintStart_toStartOf="@+id/ketnoi"
         app:layout_constraintTop_toBottomOf="@+id/txtforgotpassword" />
 
     <TextView
@@ -149,4 +177,29 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/textView5"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ketnoi"
+        app:endIconMode="password_toggle"
+        app:boxBackgroundColor="#2A926F"
+        android:paddingLeft="29dp"
+        android:paddingRight="29dp"
+        android:layout_marginTop="15dp"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/ketnoitaikhoan"
+        app:layout_constraintStart_toStartOf="@+id/ketnoitaikhoan"
+        app:layout_constraintTop_toBottomOf="@+id/ketnoitaikhoan">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/matkhau"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter password"
+            android:paddingTop="10dp"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </com.google.android.material.textfield.TextInputLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -109,8 +109,6 @@ public class ManChinh extends AppCompatActivity {
             }
         });
 
-
-
         ViewPager2 viewPager2 = findViewById(R.id.smartSlider);
         // làm chuyển ảnh tự động
         List<SliderItem> sliderItems = new ArrayList<>();
@@ -124,7 +122,7 @@ public class ManChinh extends AppCompatActivity {
             Toast.makeText(this, "Position: "+position+" Title: "+title, Toast.LENGTH_SHORT).show();
         });
     }
-
+    // hàm thiết lập nút 3 gạch để đống mở menu
     private void ActionBar()
     {
         setSupportActionBar(toolbar);
@@ -133,7 +131,6 @@ public class ManChinh extends AppCompatActivity {
         // tạo icon cho toolbar
         toolbar.setNavigationIcon(android.R.drawable.ic_menu_sort_by_size);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View v) {
                 // Khi nút back trên action bar được nhấn, mở drawer layout từ bên trái (GravityCompat.START).
@@ -151,6 +148,7 @@ public class ManChinh extends AppCompatActivity {
         navigationView = findViewById(R.id.navigationView);
         drawerLayout = findViewById(R.id.drawerlayout);
         TruyenArraylist = new ArrayList<>();
+
         // Tạo 1 con trỏ
         Cursor cursor1 = databasedoctruyen.getData1();
         // để lấy 5 quyển truyện mới nhất từ data ra màn hình hiển thị
@@ -180,7 +178,7 @@ public class ManChinh extends AppCompatActivity {
         adapterthongtin = new adapterthongtin(this,R.layout.navigation_thongtin,taiKhoanArrayList);
         listViewThongTin.setAdapter(adapterthongtin);
 
-        // chuyen muc
+        // phần chuyên mục
         chuyenmucArrayList = new ArrayList<>();
         chuyenmucArrayList.add(new chuyenmuc("Đăng bài", R.drawable.ic_post));
         chuyenmucArrayList.add(new chuyenmuc("Thông tin",R.drawable.face));
@@ -188,13 +186,13 @@ public class ManChinh extends AppCompatActivity {
         chuyenmucArrayList.add(new chuyenmuc("Nhạc nền", R.drawable.logout));
         adapterchuyenmuc = new adapterchuyenmuc(this, R.layout.chuyenmuc,chuyenmucArrayList);
         listView.setAdapter(adapterchuyenmuc);
-
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.mymenu,menu);
         return true;
     }
+
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int itemId = item.getItemId();

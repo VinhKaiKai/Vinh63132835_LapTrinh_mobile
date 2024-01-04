@@ -22,6 +22,7 @@ public class ManDangNhap extends AppCompatActivity {
         Anhxa();
         databasedoctruyen = new Databasedoctruyen(this);
 
+        // nút đăng ký
         btnDangKy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -30,17 +31,18 @@ public class ManDangNhap extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        // nút đăng nhập
         btnDangNhap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // lấy dữ liệu 2 cái khung nhập
                 String tentaikhoan = edtTaiKhoan.getText().toString();
                 String matkhau = edtMatKhau.getText().toString();
-
                 Cursor cursor = databasedoctruyen.getData();
-
+                // chạy csdl trong databasedoctruyen
                 while (cursor.moveToNext())
                 {
-                    String datatentaikhoan = cursor.getString(3);
+                    String datatentaikhoan = cursor.getString(1);
                     String datamatkhau = cursor.getString(2);
 
                     if(datatentaikhoan.equals(tentaikhoan) && datamatkhau.equals(matkhau))

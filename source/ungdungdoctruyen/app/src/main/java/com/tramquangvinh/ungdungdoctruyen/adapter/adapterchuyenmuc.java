@@ -41,16 +41,19 @@ public class adapterchuyenmuc extends BaseAdapter {
         return 0;
     }
 
+    // hiển thị các chuyên mục chức năng của menu
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(int position, View convertView, ViewGroup parent)
+    {
+        // Lấy LayoutInflater từ Context để chuyển đổi layout thành View
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-
         convertView = inflater.inflate(layout,null);
+        // Lấy các thành phần UI từ convertView
         ImageView img = (ImageView) convertView.findViewById(R.id.imgchuyenmuc);
         TextView txt = (TextView) convertView.findViewById(R.id.textviewTenchuyenmuc);
         chuyenmuc cm = chuyenmucList.get(position);
+        // Thiết lập dữ liệu cho các thành phần UI từ đối tượng chuyenmuc
         txt.setText(cm.getTenchuyenmuc());
-
         Picasso.get().load(cm.getHinhanhchuyenmuc()).placeholder(R.drawable.ic_load).error(R.drawable.chucnang2).into(img);
         return convertView;
     }

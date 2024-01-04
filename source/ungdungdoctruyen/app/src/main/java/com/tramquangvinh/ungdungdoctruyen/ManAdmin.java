@@ -29,23 +29,22 @@ public class ManAdmin extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_man_admin);
+
         listView = findViewById(R.id.listviewAdmin);
         buttonThem = findViewById(R.id.buttonThemtruyen);
 
-        initlist();
+        initlist(); // hiển thị danh sách tuyện lên
         buttonThem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                // Lấy id tài khoản để biết tài khoản admin nào chinh suawr
+                // Lấy id tài khoản để biết tài khoản admin nào chinh sửa
                 Intent intent1 = getIntent();
                 int id = intent1.getIntExtra("Id",0);
-
-                // tiếp tục gửi id qua manf hình thêm truyện
+                // tiếp tục gửi id qua màn hình thêm truyện
                 Intent intent = new Intent(ManAdmin.this, ManDangBai.class);
                 intent.putExtra("Id",id);
                 startActivity(intent);
-
             }
         });
 
@@ -60,12 +59,11 @@ public class ManAdmin extends AppCompatActivity {
     }
     private void DialogDelete(int position){
         Dialog dialog = new Dialog(this);
-        dialog.setContentView(R.layout.dialogdelete);// nap layout vo
+        dialog.setContentView(R.layout.dialogdelete);// nạp layout xóa vô
         dialog.setCanceledOnTouchOutside(false);
-        // anh xa
-        Button btnYes = dialog.findViewById(R.id.buttonYes);
+        Button btnYes = dialog.findViewById(R.id.buttonYes);// ánh xạ
         Button btnNo = dialog.findViewById(R.id.buttonNo);
-        btnYes.setOnClickListener(new View.OnClickListener() {
+        btnYes.setOnClickListener(new View.OnClickListener() { // sét sự kiện cho nút yes
             @Override
             public void onClick(View v) {
                 int idtruyen = TruyenArrayList.get(position).getID();
@@ -77,21 +75,21 @@ public class ManAdmin extends AppCompatActivity {
                 Toast.makeText(ManAdmin.this, "Xóa truyện thành công!", Toast.LENGTH_SHORT).show();
             }
         });
-        btnNo.setOnClickListener(new View.OnClickListener() {
+        btnNo.setOnClickListener(new View.OnClickListener() { // sét sự kiện cho nút no
             @Override
             public void onClick(View v) {
                 dialog.cancel();
             }
         });
         dialog.show();
-
     }
-// gan du lieu cho listview
+
+// gán dữ liệu truyện vào listview
     private void initlist() {
         TruyenArrayList = new ArrayList<>();
 
         databasedoctruyen = new Databasedoctruyen(this);
-        Cursor cursor1 = databasedoctruyen.getData2();
+        Cursor cursor1 = databasedoctruyen.getData2(); // lọc hết các dữ liệu ra màn hình.
 
         while (cursor1.moveToNext())
         {

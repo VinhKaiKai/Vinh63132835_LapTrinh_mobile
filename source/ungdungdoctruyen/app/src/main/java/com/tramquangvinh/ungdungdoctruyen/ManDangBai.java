@@ -29,17 +29,17 @@ public class ManDangBai extends AppCompatActivity {
         btnDangBai = findViewById(R.id.dbdangbai);
         databasedoctruyen = new Databasedoctruyen(this);
 
-        // nút
+        // nút đăng bài xác nhận
         btnDangBai.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                // lấy các trường thông tin vào
                 String tentruyen = edtTenTruyen.getText().toString();
                 String noidung = edtNoiDung.getText().toString();
                 String img = edtAnh.getText().toString();
 
                 Truyen truyen = CreateTruyen();
-
+                // xử lý nếu các trường rổng thì không cho đăng bài
                 if(tentruyen.equals("") || noidung.equals("") || img.equals(""))
                 {
                     Toast.makeText(ManDangBai.this, "Nhập đủ mới được đăng!", Toast.LENGTH_SHORT).show();
@@ -57,16 +57,14 @@ public class ManDangBai extends AppCompatActivity {
         });
     }
 
+    // hàm tạo tuyện
     private Truyen CreateTruyen()
     {
         String tentruyen = edtTenTruyen.getText().toString();
         String noidung = edtNoiDung.getText().toString();
         String img = edtAnh.getText().toString();
-
         Intent intent = getIntent();
-
         int id = intent.getIntExtra("Id",0);
-
         Truyen truyen = new Truyen(tentruyen,noidung,img,id);
         return  truyen;
     }

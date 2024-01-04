@@ -29,12 +29,13 @@ public class ManTimKiem extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_man_tim_kiem);
-        listView = findViewById(R.id.listviewtimkiem);
-        edt= findViewById(R.id.timkiem);
 
-        initList();
+        listView = findViewById(R.id.listviewtimkiem);
+        edt = findViewById(R.id.timkiem);
+
+        initList(); // hiển thị danh sách tuyện lên
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
+            @Override // list tuyện từ màn hình tìm kiếm
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent= new Intent(ManTimKiem.this, ManNoiDung.class);
                 String tent = arrayList.get(position).getTenTruyen();
@@ -44,15 +45,18 @@ public class ManTimKiem extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        edt.addTextChangedListener(new TextWatcher() {
+        edt.addTextChangedListener(new TextWatcher()
+        {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
+                // Phương thức này được gọi để thông báo rằng có sự thay đổi trong văn bản trước khi thực sự thay đổi.
+                // Thông thường, bạn có thể không sử dụng phương thức này, và nó để trống.
             }
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-
+                // Phương thức này được gọi để thông báo rằng có sự thay đổi trong văn bản ngay khi nó xảy ra.
+                // Trong phương thức này, bạn có thể thực hiện các xử lý ngay sau khi văn bản thay đổi
             }
 
             @Override
@@ -64,25 +68,26 @@ public class ManTimKiem extends AppCompatActivity {
     //search
     private void filter(String text)
     {
-        // xoa du lieu mang
+        // Xóa dữ liệu mảng
         arrayList.clear();
+        // Tạo một danh sách mới để lưu trữ các đối tượng Truyen sau khi lọc
         ArrayList<Truyen> filteredList = new ArrayList<>();
-
+        // Duyệt qua danh sách gốc TruyenArraylist
         for(Truyen item : TruyenArraylist)
         {
+            // Kiểm tra nếu tên của mỗi Truyen chứa phần của văn bản tìm kiếm (text)
             if(item.getTenTruyen().toLowerCase().contains(text.toLowerCase()))
             {
-                // them item vao filterlist
+                // THêm đối tượng Truyen vào danh sách filteredList
                 filteredList.add(item);
-                // them vao mang
+                // Thêm đối tượng Truyen vào mảng arrayList để hiển thị trong giao diện người dùng
                 arrayList.add(item);
-
             }
         }
         adapterTruyen.filterList(filteredList);
     }
 
-    // phuong thuc lay du lieu vao listview
+    // truyền dữ liệu truyện từ database vào listview hiển thị trên màn hình
     private void initList() {
         TruyenArraylist = new ArrayList<>();
         arrayList = new ArrayList<>();
@@ -95,13 +100,10 @@ public class ManTimKiem extends AppCompatActivity {
             String noidung = cursor.getString(2);
             String anh = cursor.getString(3);
             int id_tk = cursor.getInt(4);
-
             TruyenArraylist.add(new Truyen(id,tentruyen,noidung,anh,id_tk));
             arrayList.add(new Truyen(id,tentruyen,noidung,anh,id_tk));
             adapterTruyen = new adapterTruyen(getApplicationContext(),TruyenArraylist);
             listView.setAdapter(adapterTruyen);
-
-
         }
         cursor.moveToFirst();
         cursor.close();
